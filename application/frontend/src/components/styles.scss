@@ -1,0 +1,170 @@
+$Yellow: rgb(240, 236, 0);
+$Blue: rgb(1, 37, 70);
+$White: rgba(255, 255, 255, 1);
+$White50: rgba(255, 255, 255, 0.5);
+
+@mixin Reg {
+  font-family: "Press Start 2P", cursive;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  appearance: none;
+}
+
+button,
+input {
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  @include Reg;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: $Blue;
+  font-family: "Press Start 2P", cursive;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+.wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 50px;
+}
+
+canvas {
+  display: block;
+  height: 530px;
+  width: 300px;
+  margin: 0 auto;
+
+  border: 0;
+}
+
+header {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rem;
+
+  a,
+  button,
+  .user-name {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: $Yellow;
+    transition: color 0.5s ease;
+  }
+  nav {
+    ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: flex-end;
+
+      li {
+        margin-right: 1.5rem;
+      }
+      a,
+      button {
+        &:visited {
+          color: $Yellow;
+        }
+
+        &:hover {
+          color: $White;
+        }
+      }
+    }
+  }
+}
+
+form {
+  border-radius: 10px;
+  border: 2px solid $Yellow;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+
+  input,
+  label {
+    @include Reg;
+    display: block;
+    width: 100%;
+    color: $White;
+    font-size: 1.9rem;
+
+    &::placeholder {
+      color: $White50;
+    }
+  }
+
+  label {
+    margin-bottom: 1.5rem;
+  }
+
+  input {
+    margin-bottom: 2.5rem;
+    border-bottom: 2px solid $Yellow;
+    padding-bottom: 0.5rem;
+  }
+
+  button {
+    display: block;
+    @include Reg();
+    width: 100%;
+    padding: 2.5rem;
+    background-color: $Yellow;
+    color: black;
+    font-size: 2.5rem;
+    margin: 0 auto 2.5rem auto;
+    cursor: pointer;
+  }
+}
+
+.game {
+  h1 {
+    text-align: center;
+    color: $Yellow;
+    margin-bottom: 2.5rem;
+  }
+
+  &__score {
+    font-size: 3rem;
+    color: $White;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  &__toggle {
+    display: block;
+    @include Reg();
+    width: 30rem;
+    padding: 2.5rem;
+    background-color: $Yellow;
+    color: black;
+    font-size: 2.5rem;
+    margin: 0 auto 2.5rem auto;
+  }
+}
+
+.leaderboard {
+  table {
+    margin: 0 auto;
+    color: $Yellow;
+    font-size: 2rem;
+    border-spacing: 2rem;
+  }
+}
